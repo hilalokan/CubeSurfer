@@ -6,8 +6,8 @@ TagManager:
   tags:
   - Cube
   - Obstacle
-  - EndPoint
   - Bonus
+  - EndPoint
   layers:
   - Default
   - TransparentFX

@@ -21,7 +21,7 @@ public class PlayerMoverRunner : MonoBehaviour
 
         transform.position += new Vector3(0f, 0f, 1f) * Time.deltaTime * velocity;
 
-        if(transform.position.x > .1343f)
+        if (transform.position.x > .1343f)
         {
             transform.position = new Vector3(.1343f, transform.position.y, transform.position.z);
         }
@@ -31,6 +31,14 @@ public class PlayerMoverRunner : MonoBehaviour
             transform.position = new Vector3(-.1609f, transform.position.y, transform.position.z);
         }
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.gameObject.CompareTag("EndPoint"))
+        {
+            AccessEndPoint();
+        }
     }
 
     public void AccessEndPoint()
