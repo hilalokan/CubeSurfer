@@ -10,6 +10,7 @@ public class PlayerMoverRunner : MonoBehaviour
     public bool CanMotion { get => canMotion; set => canMotion = value; }
 
 
+
     public float velocity;
 
     private void FixedUpdate()
@@ -37,7 +38,9 @@ public class PlayerMoverRunner : MonoBehaviour
     {
         if (other.transform.gameObject.CompareTag("EndPoint"))
         {
+            Debug.Log("playermoverrunner EndPoint");
             AccessEndPoint();
+            PlayerCubeManager.Instance.ActivateWinUI();
         }
     }
 

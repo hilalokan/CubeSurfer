@@ -39,17 +39,6 @@ public class CubeDetector : MonoBehaviour
 
         }
 
-        if (collision.gameObject.CompareTag("EndPoint"))
-        {
-            Debug.Log($"Collision{collision.gameObject.name}");
-
-            PlayerMoverRunner.AccessEndPoint();
-
-            collision.gameObject.transform.parent = this.transform;
-
-            PlayerCubeManager.Instance.ActivateWinUI();
-        }
-
     }
     
 }

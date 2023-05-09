@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerCubeManager : MonoBehaviour
 {
 
-    public int levelNumber;
+    public static int levelNumber = 1;
 
     private float stepLength = 0.8f;
     private float playerStepLength = 1.2f;
@@ -117,6 +117,7 @@ public class PlayerCubeManager : MonoBehaviour
         Vector3 defaultScale = WinUI.transform.localScale;
         WinUI.transform.localScale = Vector3.one * 0.00001f;
         WinUI.DOScale(defaultScale, 1f).SetEase(Ease.OutBounce);
+        Debug.Log("curr level: " + levelNumber);
     }
 
     public void RestartLevel()
@@ -127,8 +128,13 @@ public class PlayerCubeManager : MonoBehaviour
 
     public void NextLevel()
     {
-        SceneManager.LoadScene(++levelNumber);
-        Debug.Log(levelNumber);
+        if (levelNumber == 1)
+            levelNumber = 2;
+        else
+            levelNumber = 1;
+
+        SceneManager.LoadScene(levelNumber);
+        Debug.Log("new level:" + levelNumber);
     }
 
     public void BackToMainMenu()
