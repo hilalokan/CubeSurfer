@@ -3,12 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class CubeDetector : MonoBehaviour
 {
 
     [SerializeField]
     private PlayerMoverRunner PlayerMoverRunner;
+
+    [SerializeField]
+    private AudioMixer myMixer;
+
+    public float coinCollectSoundVolume;
+
+    public AudioClip coinSound;
 
     public TextMeshProUGUI text;
     private int collectedBonus = 0;
@@ -20,6 +28,8 @@ public class CubeDetector : MonoBehaviour
         {
             Debug.Log("Bonus Point");
             collision.gameObject.SetActive(false);
+
+            AudioSource.PlayClipAtPoint(coinSound, transform.position, coinCollectSoundVolume);
 
             collectedBonus++;
             text.text = collectedBonus.ToString();

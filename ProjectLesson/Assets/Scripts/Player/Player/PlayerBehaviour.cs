@@ -33,7 +33,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void SuccessAnimation()
     {
-        animatorOfPlayer.SetTrigger("Success");
+        animatorOfPlayer.SetTrigger("Victory");
     }
 
     public void FailAnimation()

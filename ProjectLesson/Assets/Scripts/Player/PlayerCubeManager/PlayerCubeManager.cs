@@ -113,7 +113,9 @@ public class PlayerCubeManager : MonoBehaviour
 
     public void ActivateWinUI()
     {
+        PlayerBehaviour.Instance.SuccessAnimation();
         WinUI.gameObject.SetActive(true);
+        
         Vector3 defaultScale = WinUI.transform.localScale;
         WinUI.transform.localScale = Vector3.one * 0.00001f;
         WinUI.DOScale(defaultScale, 1f).SetEase(Ease.OutBounce);
