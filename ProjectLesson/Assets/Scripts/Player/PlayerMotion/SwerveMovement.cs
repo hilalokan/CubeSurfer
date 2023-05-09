@@ -13,9 +13,15 @@ public class SwerveMovement : MonoBehaviour
     [SerializeField]
     private float maxSwerveAmount = 1f;
 
+    private float canMoveFactor = 1f;
+
     private void Update()
     {
-        float swerveAmount = Time.deltaTime * swerveSpeed * SwerveInputSystem.MoveFactoryX;
+        if (PlayerBehaviour.Instance.PlayerMoverRunner.CanMotion)
+            canMoveFactor = 1f;
+        else
+            canMoveFactor = 0f;
+        float swerveAmount = Time.deltaTime * swerveSpeed * SwerveInputSystem.MoveFactoryX * canMoveFactor;
         swerveAmount = Mathf.Clamp(swerveAmount, -maxSwerveAmount, maxSwerveAmount);
         transform.Translate(swerveAmount, 0f, 0f);
     }

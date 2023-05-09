@@ -44,6 +44,7 @@ public class PlayerBehaviour : MonoBehaviour
     public void StopPlayer()
     {
         PlayerMoverRunner.velocity = 0;
+        PlayerBehaviour.Instance.PlayerMoverRunner.CanMotion = false;
     }
 
 }
