@@ -9,7 +9,7 @@ public class PlayerCubeManager : MonoBehaviour
 
     public static int levelNumber = 1;
 
-    private float stepLength = 0.8f;
+    private float stepLength = 0.785f;
     private float playerStepLength = 1.2f;
 
     public List<CubeBehaviour> listOfCubeBehaviour = new List<CubeBehaviour>();
