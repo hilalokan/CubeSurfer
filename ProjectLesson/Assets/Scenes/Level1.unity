@@ -14809,7 +14809,6 @@ GameObject:
   - component: {fileID: 631710964}
   - component: {fileID: 631710965}
   - component: {fileID: 631710966}
-  - component: {fileID: 631710967}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -14862,25 +14861,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!95 &631710967
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 631710963}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7546b220f9968354e80be4fbbea1030d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &646369843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35006,11 +34986,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7811467289720779123, guid: 91d61ac3d6f76dd4184b414232ba6843, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.08804329
+      value: -0.002
       objectReference: {fileID: 0}
     - target: {fileID: 7811467289720779123, guid: 91d61ac3d6f76dd4184b414232ba6843, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.0004845
+      value: -1.027
       objectReference: {fileID: 0}
     - target: {fileID: 7811467289720779123, guid: 91d61ac3d6f76dd4184b414232ba6843, type: 3}
       propertyPath: m_LocalPosition.z
