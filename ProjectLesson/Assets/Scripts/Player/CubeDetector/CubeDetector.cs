@@ -26,7 +26,7 @@ public class CubeDetector : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Bonus"))
         {
-            Debug.Log("Bonus Point");
+            //Debug.Log("Bonus Point");
             collision.gameObject.SetActive(false);
 
             AudioSource.PlayClipAtPoint(coinSound, transform.position, coinCollectSoundVolume);
@@ -38,7 +38,7 @@ public class CubeDetector : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Cube"))
         {
-            Debug.Log("Collision");
+            //Debug.Log("Collision");
 
             var cubeBehaviour = collision.gameObject.GetComponent<CubeBehaviour>();
 

@@ -38,7 +38,7 @@ public class PlayerMoverRunner : MonoBehaviour
     {
         if (other.transform.gameObject.CompareTag("EndPoint"))
         {
-            Debug.Log("playermoverrunner EndPoint");
+            //Debug.Log("playermoverrunner EndPoint");
             AccessEndPoint();
             PlayerCubeManager.Instance.ActivateWinUI();
         }

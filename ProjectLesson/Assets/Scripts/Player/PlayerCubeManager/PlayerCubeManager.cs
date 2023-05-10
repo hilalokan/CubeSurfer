@@ -119,7 +119,7 @@ public class PlayerCubeManager : MonoBehaviour
         Vector3 defaultScale = WinUI.transform.localScale;
         WinUI.transform.localScale = Vector3.one * 0.00001f;
         WinUI.DOScale(defaultScale, 1f).SetEase(Ease.OutBounce);
-        Debug.Log("curr level: " + levelNumber);
+        //Debug.Log("curr level: " + levelNumber);
     }
 
     public void RestartLevel()
@@ -136,7 +136,7 @@ public class PlayerCubeManager : MonoBehaviour
             levelNumber = 1;
 
         SceneManager.LoadScene(levelNumber);
-        Debug.Log("new level:" + levelNumber);
+        //Debug.Log("new level:" + levelNumber);
     }
 
     public void BackToMainMenu()
