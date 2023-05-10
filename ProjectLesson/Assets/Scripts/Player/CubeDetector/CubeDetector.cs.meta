@@ -3,7 +3,11 @@ guid: 7a8eabeba3054784db789cb889dca588
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - PlayerMoverRunner: {instanceID: 0}
+  - myMixer: {fileID: 24100000, guid: 1224214d80695a04d94cdf77d39a20a0, type: 2}
+  - coinSound: {fileID: 8300000, guid: b2ee9cb44a5303c4c905ba9006b2c0b5, type: 3}
+  - text: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

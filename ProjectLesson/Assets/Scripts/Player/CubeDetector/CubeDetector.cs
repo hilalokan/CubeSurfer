@@ -14,7 +14,7 @@ public class CubeDetector : MonoBehaviour
     [SerializeField]
     private AudioMixer myMixer;
 
-    public float coinCollectSoundVolume;
+    public float coinCollectSoundVolume = 0.025f;
 
     public AudioClip coinSound;
 
