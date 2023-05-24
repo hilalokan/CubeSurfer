@@ -10137,7 +10137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SwerveInputSystem: {fileID: 376014889}
-  swerveSpeed: 0.5
+  swerveSpeed: 0.15
   maxSwerveAmount: 1
 --- !u!54 &376014891
 Rigidbody:
