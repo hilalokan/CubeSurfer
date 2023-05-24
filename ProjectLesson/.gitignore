@@ -60,3 +60,7 @@ crashlytics-build.properties
 
 # AppGallery Connect files
 [Aa]ssets/StreamingAssets/
+
+# Gradle stuff
+*.gradle
+*.gradle.meta
