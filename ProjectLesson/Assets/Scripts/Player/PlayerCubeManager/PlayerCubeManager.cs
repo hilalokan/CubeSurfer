@@ -86,7 +86,7 @@ public class PlayerCubeManager : MonoBehaviour
 
         if(listOfCubeBehaviour.Count < 1)
         {
-            ShowInstertitialAd();
+            ShowInterstitialAd();
 
             Debug.Log("Game Over");
 
@@ -153,7 +153,7 @@ public class PlayerCubeManager : MonoBehaviour
         //Debug.Log("new level:" + levelNumber);
     }
 
-    public void ShowInstertitialAd()
+    public void ShowInterstitialAd()
     {
         if (hideAds) return;
         Debug.Log("[HMS] AdsDemoManager ShowInstertitialAd");
