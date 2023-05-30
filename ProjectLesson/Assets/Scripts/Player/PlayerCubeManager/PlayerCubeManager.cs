@@ -3,11 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using HuaweiMobileServices.Ads;
+using HmsPlugin;
+using System;
+using HuaweiMobileServices.Ads.NativeAd;
+using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class PlayerCubeManager : MonoBehaviour
 {
 
     public static int levelNumber = 1;
+
+    private bool hideAds = false;
+
+    public RawImage ad_media;
 
     private float stepLength = 0.785f;
     private float playerStepLength = 1.2f;
@@ -76,6 +86,8 @@ public class PlayerCubeManager : MonoBehaviour
 
         if(listOfCubeBehaviour.Count < 1)
         {
+            ShowInstertitialAd();
+
             Debug.Log("Game Over");
 
             PlayerBehaviour.Instance.FailAnimation();
@@ -113,6 +125,8 @@ public class PlayerCubeManager : MonoBehaviour
 
     public void ActivateWinUI()
     {
+        ShowInterstitialAd();
+
         PlayerBehaviour.Instance.SuccessAnimation();
         WinUI.gameObject.SetActive(true);
         
@@ -137,6 +151,13 @@ public class PlayerCubeManager : MonoBehaviour
 
         SceneManager.LoadScene(levelNumber);
         //Debug.Log("new level:" + levelNumber);
+    }
+
+    public void ShowInstertitialAd()
+    {
+        if (hideAds) return;
+        Debug.Log("[HMS] AdsDemoManager ShowInstertitialAd");
+        HMSAdsKitManager.Instance.ShowInterstitialAd();
     }
 
     public void BackToMainMenu()
