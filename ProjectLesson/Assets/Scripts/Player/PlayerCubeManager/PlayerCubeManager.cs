@@ -15,7 +15,7 @@ public class PlayerCubeManager : MonoBehaviour
 
     public static int levelNumber = 1;
 
-    private bool hideAds = false;
+    public bool hideAds = false;
 
     public RawImage ad_media;
 
