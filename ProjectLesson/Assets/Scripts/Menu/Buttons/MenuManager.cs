@@ -13,7 +13,6 @@ public class MenuManager : MonoBehaviour
 
     private void Awake()
     {
-        HMSIAPManager.Instance.();
     }
 
     private void Start()
@@ -32,6 +31,9 @@ public class MenuManager : MonoBehaviour
 
     public void onRemoveAdsClick()
     {
+
+        PlayerCubeManager.Instance.hideAds = true;
+
         HMSIAPManager.Instance.OnBuyProductSuccess = OnBuyProductSuccess;
         HMSIAPManager.Instance.PurchaseProduct(HMSIAPConstants.RemoveAds);
     }
