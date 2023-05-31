@@ -32,6 +32,13 @@ public class MenuManager : MonoBehaviour
                 }
             }
         });
+
+        if (!hideAds)
+        {
+            HMSAdsKitManager.Instance.ShowBannerAd();
+        }
+        else
+            HMSAdsKitManager.Instance.HideBannerAd();
     }
 
     #region Singleton
