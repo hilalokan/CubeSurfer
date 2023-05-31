@@ -9,7 +9,6 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    public RectTransform SettingsBG;
 
     private void Awake()
     {
