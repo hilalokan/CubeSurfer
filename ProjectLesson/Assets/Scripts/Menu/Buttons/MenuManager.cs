@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
+    public bool hideAds = false;
 
     private void Awake()
     {
@@ -49,8 +50,6 @@ public class MenuManager : MonoBehaviour
     public void onRemoveAdsClick()
     {
 
-        PlayerCubeManager.Instance.hideAds = true;
-
         HMSIAPManager.Instance.OnBuyProductSuccess = OnBuyProductSuccess;
         HMSIAPManager.Instance.PurchaseProduct(HMSIAPConstants.RemoveAds);
     }
@@ -60,7 +59,7 @@ public class MenuManager : MonoBehaviour
         if(result.InAppPurchaseData.ProductId == HMSIAPConstants.RemoveAds)
         {
             Debug.Log("ads removed");
-            PlayerCubeManager.Instance.hideAds = true;
+            hideAds = true;
         }
     }
 

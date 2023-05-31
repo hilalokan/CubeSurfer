@@ -15,8 +15,6 @@ public class PlayerCubeManager : MonoBehaviour
 
     public static int levelNumber = 1;
 
-    public bool hideAds = false;
-
     public RawImage ad_media;
 
     private float stepLength = 0.785f;
@@ -155,7 +153,8 @@ public class PlayerCubeManager : MonoBehaviour
 
     public void ShowInterstitialAd()
     {
-        if (hideAds) return;
+        if (MenuManager.Instance.hideAds)
+            return;
         Debug.Log("[HMS] AdsDemoManager ShowInstertitialAd");
         HMSAdsKitManager.Instance.ShowInterstitialAd();
     }
