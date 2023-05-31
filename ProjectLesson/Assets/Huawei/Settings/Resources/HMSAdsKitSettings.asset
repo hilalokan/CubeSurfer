@@ -23,6 +23,7 @@ MonoBehaviour:
     - BannerAdID
     - InterstitialAdID
     - RewardedAdID
+    - UnityBannerAdSizeType
     _values:
     - False
     - True
@@ -33,3 +34,4 @@ MonoBehaviour:
     - j4gyctfgmt
     - m1y7faybvo
     - t2vb3549oz
+    - BANNER_SIZE_320_50
