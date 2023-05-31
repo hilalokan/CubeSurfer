@@ -10,10 +10,28 @@ using UnityEngine.UI;
 public class MenuManager : MonoBehaviour
 {
     public bool hideAds = false;
+    private GameObject removeAdsButton;
 
     private void Awake()
     {
         Singleton();
+        removeAdsButton = GameObject.Find("RemoveAds");
+    }
+
+    private void checkPurchases()
+    {
+        HMSIAPManager.Instance.RestoreOwnedPurchases((restoredProducts) =>
+        {
+            foreach (var item in restoredProducts.InAppPurchaseDataList)
+            {
+                if (item.ProductId == HMSIAPConstants.RemoveAds)
+                {
+                    Debug.Log("purchase restored, ads removed");
+                    hideAds = true;
+                    removeAdsButton.SetActive(false);
+                }
+            }
+        });
     }
 
     #region Singleton
@@ -35,6 +53,7 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
+        checkPurchases();
     }
 
     public void StartGame()
@@ -58,8 +77,7 @@ public class MenuManager : MonoBehaviour
     {
         if(result.InAppPurchaseData.ProductId == HMSIAPConstants.RemoveAds)
         {
-            Debug.Log("ads removed");
-            hideAds = true;
+            checkPurchases();
         }
     }
 
