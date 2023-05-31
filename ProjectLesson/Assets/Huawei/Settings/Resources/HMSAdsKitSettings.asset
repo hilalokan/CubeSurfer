@@ -19,9 +19,11 @@ MonoBehaviour:
     - ShowBannerOnLoad
     - BannerRefreshInterval
     - EnableInterstitialAd
+    - EnableRewardedAd
     _values:
     - True
     - True
     - True
     - 60
+    - True
     - True
