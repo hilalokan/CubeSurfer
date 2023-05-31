@@ -12,7 +12,25 @@ public class MenuManager : MonoBehaviour
 
     private void Awake()
     {
+        Singleton();
     }
+
+    #region Singleton
+
+    public static MenuManager Instance;
+
+    private void Singleton()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+
+        Instance = this;
+
+    }
+
+    #endregion
 
     private void Start()
     {
