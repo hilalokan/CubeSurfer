@@ -9,15 +9,58 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    public RectTransform SettingsBG;
+    public bool hideAds = false;
+    private GameObject removeAdsButton;
 
     private void Awake()
     {
-        HMSIAPManager.Instance.();
+        Singleton();
+        removeAdsButton = GameObject.Find("RemoveAds");
     }
+
+    private void checkPurchases()
+    {
+        HMSIAPManager.Instance.RestoreOwnedPurchases((restoredProducts) =>
+        {
+            foreach (var item in restoredProducts.InAppPurchaseDataList)
+            {
+                if (item.ProductId == HMSIAPConstants.RemoveAds)
+                {
+                    Debug.Log("purchase restored, ads removed");
+                    hideAds = true;
+                    removeAdsButton.SetActive(false);
+                }
+            }
+        });
+
+        if (!hideAds)
+        {
+            HMSAdsKitManager.Instance.ShowBannerAd();
+        }
+        else
+            HMSAdsKitManager.Instance.HideBannerAd();
+    }
+
+    #region Singleton
+
+    public static MenuManager Instance;
+
+    private void Singleton()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+
+        Instance = this;
+
+    }
+
+    #endregion
 
     private void Start()
     {
+        checkPurchases();
     }
 
     public void StartGame()
@@ -32,6 +75,7 @@ public class MenuManager : MonoBehaviour
 
     public void onRemoveAdsClick()
     {
+
         HMSIAPManager.Instance.OnBuyProductSuccess = OnBuyProductSuccess;
         HMSIAPManager.Instance.PurchaseProduct(HMSIAPConstants.RemoveAds);
     }
@@ -40,8 +84,7 @@ public class MenuManager : MonoBehaviour
     {
         if(result.InAppPurchaseData.ProductId == HMSIAPConstants.RemoveAds)
         {
-            Debug.Log("ads removed");
-            PlayerCubeManager.Instance.hideAds = true;
+            checkPurchases();
         }
     }
 

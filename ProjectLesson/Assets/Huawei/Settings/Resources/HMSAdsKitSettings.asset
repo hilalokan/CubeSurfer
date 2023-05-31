@@ -19,9 +19,19 @@ MonoBehaviour:
     - ShowBannerOnLoad
     - BannerRefreshInterval
     - EnableInterstitialAd
+    - EnableRewardedAd
+    - BannerAdID
+    - InterstitialAdID
+    - RewardedAdID
+    - UnityBannerAdSizeType
     _values:
-    - True
+    - False
     - True
     - True
     - 60
     - True
+    - True
+    - j4gyctfgmt
+    - m1y7faybvo
+    - t2vb3549oz
+    - BANNER_SIZE_320_50

@@ -15,8 +15,6 @@ public class PlayerCubeManager : MonoBehaviour
 
     public static int levelNumber = 1;
 
-    public bool hideAds = false;
-
     public RawImage ad_media;
 
     private float stepLength = 0.785f;
@@ -86,8 +84,6 @@ public class PlayerCubeManager : MonoBehaviour
 
         if(listOfCubeBehaviour.Count < 1)
         {
-            ShowInterstitialAd();
-
             Debug.Log("Game Over");
 
             PlayerBehaviour.Instance.FailAnimation();
@@ -98,6 +94,7 @@ public class PlayerCubeManager : MonoBehaviour
             playerTransform.DOLocalJump(groundPosition, 0.05f, 1, 0.5f);
 
             LoseUI.gameObject.SetActive(true);
+            ShowInterstitialAd();
 
             return;
 
@@ -155,7 +152,8 @@ public class PlayerCubeManager : MonoBehaviour
 
     public void ShowInterstitialAd()
     {
-        if (hideAds) return;
+        if (MenuManager.Instance.hideAds)
+            return;
         Debug.Log("[HMS] AdsDemoManager ShowInstertitialAd");
         HMSAdsKitManager.Instance.ShowInterstitialAd();
     }
