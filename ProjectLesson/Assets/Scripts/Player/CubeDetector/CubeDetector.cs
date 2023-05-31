@@ -19,7 +19,7 @@ public class CubeDetector : MonoBehaviour
     public AudioClip coinSound;
 
     public TextMeshProUGUI text;
-    private int collectedBonus = 0;
+    public int collectedBonus = 0;
 
     private void OnCollisionEnter(Collision collision)
     {
