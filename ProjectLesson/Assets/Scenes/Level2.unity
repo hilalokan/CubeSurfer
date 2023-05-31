@@ -284,7 +284,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 733534997}
         m_TargetAssemblyTypeName: PlayerCubeManager, Assembly-CSharp
         m_MethodName: RestartLevel
         m_Mode: 1
@@ -16810,8 +16810,8 @@ MonoBehaviour:
   ad_media: {fileID: 0}
   listOfCubeBehaviour:
   - {fileID: 75737683}
-  WinUI: {fileID: 0}
-  LoseUI: {fileID: 0}
+  WinUI: {fileID: 2124518890}
+  LoseUI: {fileID: 2015551342}
 --- !u!4 &733534998
 Transform:
   m_ObjectHideFlags: 0
@@ -16840,10 +16840,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerMoverRunner: {fileID: 376014888}
-  myMixer: {fileID: 0}
-  coinCollectSoundVolume: 1
-  coinSound: {fileID: 0}
-  text: {fileID: 0}
+  myMixer: {fileID: 24100000, guid: 1224214d80695a04d94cdf77d39a20a0, type: 2}
+  coinCollectSoundVolume: 0.025
+  coinSound: {fileID: 8300000, guid: b2ee9cb44a5303c4c905ba9006b2c0b5, type: 3}
+  text: {fileID: 1982043810}
   collectedBonus: 0
 --- !u!1001 &739954862
 PrefabInstance:
@@ -29258,7 +29258,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 733534997}
         m_TargetAssemblyTypeName: PlayerCubeManager, Assembly-CSharp
         m_MethodName: BackToMainMenu
         m_Mode: 1
@@ -33030,7 +33030,7 @@ MonoBehaviour:
   myMixer: {fileID: 24100000, guid: 1224214d80695a04d94cdf77d39a20a0, type: 2}
   coinCollectSoundVolume: 0.025
   coinSound: {fileID: 8300000, guid: b2ee9cb44a5303c4c905ba9006b2c0b5, type: 3}
-  text: {fileID: 0}
+  text: {fileID: 1982043810}
   collectedBonus: 0
 --- !u!135 &1794816985
 SphereCollider:
@@ -34197,7 +34197,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 733534997}
         m_TargetAssemblyTypeName: PlayerCubeManager, Assembly-CSharp
         m_MethodName: NextLevel
         m_Mode: 1
@@ -34675,7 +34675,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 733534997}
         m_TargetAssemblyTypeName: PlayerCubeManager, Assembly-CSharp
         m_MethodName: RestartLevel
         m_Mode: 1

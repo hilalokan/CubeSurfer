@@ -84,8 +84,6 @@ public class PlayerCubeManager : MonoBehaviour
 
         if(listOfCubeBehaviour.Count < 1)
         {
-            ShowInterstitialAd();
-
             Debug.Log("Game Over");
 
             PlayerBehaviour.Instance.FailAnimation();
@@ -96,6 +94,7 @@ public class PlayerCubeManager : MonoBehaviour
             playerTransform.DOLocalJump(groundPosition, 0.05f, 1, 0.5f);
 
             LoseUI.gameObject.SetActive(true);
+            ShowInterstitialAd();
 
             return;
 
