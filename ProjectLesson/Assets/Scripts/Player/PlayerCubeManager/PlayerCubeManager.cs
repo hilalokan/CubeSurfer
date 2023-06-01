@@ -94,6 +94,7 @@ public class PlayerCubeManager : MonoBehaviour
             playerTransform.DOLocalJump(groundPosition, 0.05f, 1, 0.5f);
 
             LoseUI.gameObject.SetActive(true);
+
             ShowInterstitialAd();
 
             return;
@@ -126,6 +127,7 @@ public class PlayerCubeManager : MonoBehaviour
 
         PlayerBehaviour.Instance.SuccessAnimation();
         WinUI.gameObject.SetActive(true);
+
         
         Vector3 defaultScale = WinUI.transform.localScale;
         WinUI.transform.localScale = Vector3.one * 0.00001f;

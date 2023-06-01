@@ -1,5 +1,6 @@
 using HmsPlugin;
 using HuaweiMobileServices.IAP;
+using HuaweiMobileServices.Utils;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -11,6 +12,7 @@ public class MenuManager : MonoBehaviour
 {
     public bool hideAds = false;
     private GameObject removeAdsButton;
+    public bool userSignedIn = true;
 
     private void Awake()
     {
@@ -60,7 +62,16 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
+        HMSAccountKitManager.Instance.OnSignInFailed = OnSignInFailed;
+        HMSAccountKitManager.Instance.SilentSignIn();
         checkPurchases();
+    }
+
+    private void OnSignInFailed(HMSException error)
+    {
+        if(error.ErrorCode == 2012)
+            userSignedIn = false;
+        
     }
 
     public void StartGame()
@@ -75,6 +86,8 @@ public class MenuManager : MonoBehaviour
 
     public void onRemoveAdsClick()
     {
+        if(!HMSAccountKitManager.Instance.IsSignedIn)
+            HMSAccountKitManager.Instance.SignIn();
 
         HMSIAPManager.Instance.OnBuyProductSuccess = OnBuyProductSuccess;
         HMSIAPManager.Instance.PurchaseProduct(HMSIAPConstants.RemoveAds);

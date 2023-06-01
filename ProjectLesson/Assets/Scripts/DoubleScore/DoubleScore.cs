@@ -44,6 +44,8 @@ public class DoubleScore : MonoBehaviour
 
     public void Buy2XPoints()
     {
+        if(!HMSAccountKitManager.Instance.IsSignedIn)
+            HMSAccountKitManager.Instance.SignIn();
         HMSIAPManager.Instance.OnBuyProductSuccess = OnBuyProductSuccess;
         HMSIAPManager.Instance.PurchaseProduct(HMSIAPConstants._2xPoints);
 
